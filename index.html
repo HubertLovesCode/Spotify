@@ -2141,7 +2141,7 @@
         <!-- Main content will change based on selected view -->
         <div id="home-view">
           <div class="header">
-            <h1>$CZIFY CA: TBA </h1>
+<h1 id="contract-address">$KIMIFY CA: TBA </h1>
             <div class="header-right">
               <div class="social-links">
                 <a href="https://twitter.com/kimifysol" target="_blank" class="social-link">
@@ -2496,6 +2496,27 @@
   addMapNavLink();
   addMemeNavLink();
   
+  // Add click to copy functionality for contract address
+  document.getElementById('contract-address').addEventListener('click', function() {
+    const contractAddress = '4nuXMaRVDcUTCCt7sAZ68G9wz9vsutHJ37TYmgbcpump';
+    
+    navigator.clipboard.writeText(contractAddress).then(function() {
+      // Show success message
+      const originalText = this.textContent;
+      this.textContent = 'Copied to clipboard!';
+      this.style.cursor = 'pointer';
+      
+      setTimeout(() => {
+        this.textContent = originalText;
+      }, 2000);
+    }).catch(function(err) {
+      console.error('Could not copy text: ', err);
+    });
+  });
+
+  // Add cursor pointer style
+  document.getElementById('contract-address').style.cursor = 'pointer';
+
   // Setup share button in the wrapped modal
   const setupShareButton = function() {
     const shareButton = document.querySelector('.share-btn');
