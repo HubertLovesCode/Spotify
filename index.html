@@ -2497,23 +2497,26 @@
   addMemeNavLink();
 
   
-  // Add click to copy functionality for contract address
-  document.getElementById('contract-address').addEventListener('click', function() {
-    const contractAddress = 'TBA';
-    
-    navigator.clipboard.writeText(contractAddress).then(function() {
-      // Show success message
-      const originalText = this.textContent;
-      this.textContent = 'Copied to clipboard!';
-      this.style.cursor = 'pointer';
-      
-      setTimeout(() => {
-        this.textContent = originalText;
-      }, 2000);
-    }).catch(function(err) {
-      console.error('Could not copy text: ', err);
-    });
-  });
+// Add click to copy functionality for contract address
+document.getElementById('contract-address').addEventListener('click', function() {
+  const contractAddress = 'TBA';
+  
+  // Create a temporary textarea element
+  const textarea = document.createElement('textarea');
+  textarea.value = contractAddress;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand('copy');
+  document.body.removeChild(textarea);
+  
+  // Show success message
+  const originalText = this.textContent;
+  this.textContent = 'Copied!';
+  
+  setTimeout(() => {
+    this.textContent = originalText;
+  }, 2000);
+});
 
   // Add cursor pointer style
   document.getElementById('contract-address').style.cursor = 'pointer';
