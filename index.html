@@ -2627,14 +2627,14 @@ function loadSongs() {
               li.dataset.playlistId = playlist.id;
               li.onclick = () => loadPlaylistView(playlist.id);
               
-              const imageUrl = playlist.is_user_created 
-                ? playlist.image_url // Use URL for user-created playlists
-                : `images/${playlist.image}`; // Use local path for default playlists
+const imageUrl = playlist.is_user_created 
+  ? playlist.image_url 
+  : playlist.image;
               
-              li.innerHTML = `
-                <img src="${imageUrl}" alt="${playlist.name}" class="playlist-mini-img">
-                ${playlist.name}
-              `;
+li.innerHTML = `
+  <img src="${playlist.image}" alt="${playlist.name}" class="playlist-mini-img">
+  ${playlist.name}
+`;
               
               playlistsContainer.appendChild(li);
             });
@@ -2650,10 +2650,10 @@ function loadSongs() {
                 li.dataset.playlistId = playlist.id;
                 li.onclick = () => loadPlaylistView(playlist.id);
                 
-                li.innerHTML = `
-                  <img src="images/${playlist.image}" alt="${playlist.name}" class="playlist-mini-img">
-                  ${playlist.name}
-                `;
+li.innerHTML = `
+  <img src="${playlist.image}" alt="${playlist.name}" class="playlist-mini-img">
+  ${playlist.name}
+`;
                 
                 playlistsContainer.appendChild(li);
               });
