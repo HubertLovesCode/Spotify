@@ -2782,7 +2782,7 @@ function loadSongs() {
                     <td>
                       <div class="song-cell">
                         <div class="song-cell-img">
-                          <img src="images/${song.imageFile}" alt="${song.title}">
+                          <img src="${song.imageFile}" alt="${song.title}">
                         </div>
                         <div class="song-cell-info">
                           <div class="song-cell-title">${song.title}</div>
@@ -2872,7 +2872,7 @@ function loadSongs() {
                     <td>
                       <div class="song-cell">
                         <div class="song-cell-img">
-                          <img src="images/${song.imageFile}" alt="${song.title}">
+                          <img src="${song.imageFile}" alt="${song.title}">
                         </div>
                         <div class="song-cell-info">
                           <div class="song-cell-title">${song.title}</div>
@@ -2906,7 +2906,7 @@ function loadSongs() {
           
           // Set the image in the player
           const currentSongImg = document.createElement('img');
-          currentSongImg.src = `images/${song.imageFile}`;
+          currentSongImg.src = `${song.imageFile}`;
           currentSongImg.alt = song.title;
           currentSongImg.className = 'now-playing-img';
           
@@ -3272,7 +3272,7 @@ flagImg.alt = 'China Flag';
                     <td>
                       <div class="song-cell">
                         <div class="song-cell-img">
-                          <img src="images/${song.imageFile}" alt="${song.title}">
+                          <img src="${song.imageFile}" alt="${song.title}">
                         </div>
                         <div class="song-cell-info">
                           <div class="song-cell-title">${song.title}</div>
@@ -3351,7 +3351,7 @@ flagImg.alt = 'China Flag';
                     <td>
                       <div class="song-cell">
                         <div class="song-cell-img">
-                          <img src="images/${song.imageFile}" alt="${song.title}">
+                          <img src="${song.imageFile}" alt="${song.title}">
                         </div>
                         <div class="song-cell-info">
                           <div class="song-cell-title">${song.title}</div>
@@ -3379,7 +3379,7 @@ flagImg.alt = 'China Flag';
             .filter(song => song.id !== 'song8') // Filter out BTS song
             .map(song => `
               <div class="song-selection-tile" data-song-id="${song.id}">
-                <img src="images/${song.imageFile}" alt="${song.title}" class="song-selection-img">
+                <img src="${song.imageFile}" alt="${song.title}" class="song-selection-img">
                 <div class="song-selection-title">${song.title}</div>
                 <div class="song-selection-overlay"></div>
               </div>
