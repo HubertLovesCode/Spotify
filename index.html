@@ -2377,64 +2377,64 @@
           const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im54b25obHNiaXdpZWpjamZrcnZ2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI3ODEzOTQsImV4cCI6MjA1ODM1NzM5NH0.0qjK26i5EvACQJKTfnEMUTD89DzzOswCO1PeQz8omVA'; // Get this from your Supabase project settings
           const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
           // Mock data for songs
-        const songs = [
-          { 
-            id: 'song1', 
-            title: 'Bull Market',
-            artist: 'Alon Cohen', 
-            imageFile: 'kim1.png', 
-            audioFile: 'kim1.mp3' 
-          },
-          { 
-            id: 'song2', 
-            title: '4', 
-            artist: 'Alon Cohen', 
-            imageFile: 'kim2.png', 
-            audioFile: 'kim2.mp3' 
-          },
-          { 
-            id: 'song3', 
-            title: 'BNB 4 LYF', 
-            artist: 'Alon Cohen', 
-            imageFile: 'kim3.png', 
-            audioFile: 'kim3.mp3' 
-          },
-          { 
-            id: 'song4', 
-            title: 'gym flow', 
-            artist: 'Alon Cohen', 
-            imageFile: 'kim4.png', 
-            audioFile: 'kim4.mp3' 
-          },
-          { 
-            id: 'song5', 
-            title: 'Communist mood', 
-            artist: 'Alon Cohen', 
-            imageFile: 'kim5.png', 
-            audioFile: 'kim5.mp3' 
-          },
-          { 
-            id: 'song6', 
-            title: 'Broccoli', 
-            artist: 'Alon Cohen', 
-            imageFile: 'kim6.png', 
-            audioFile: 'kim6.mp3' 
-          },
-          { 
-            id: 'song7', 
-            title: 'Fuck Alon', 
-            artist: 'Alon Cohen', 
-            imageFile: 'kim7.png', 
-            audioFile: 'kim7.mp3' 
-          },
-          { 
-            id: 'song8', 
-            title: 'Fud playlist', 
-            artist: 'Alon Cohen', 
-            imageFile: 'BTS.png', 
-            audioFile: 'bts.mp3' 
-          }
-        ];
+const songs = [
+  { 
+    id: 'song1', 
+    title: 'Bull Market',
+    artist: 'Alon', 
+    imageFile: 'https://static.wixstatic.com/media/e2da02_9a8d4dd9084d43b1a0f131e98f08a3e4~mv2.jpg', 
+    audioFile: 'kim1.mp3' 
+  },
+  { 
+    id: 'song2', 
+    title: '4', 
+    artist: 'Alon', 
+    imageFile: 'https://static.wixstatic.com/media/e2da02_cb4162351e874f04bd14c40af7c98da8~mv2.jpg', 
+    audioFile: 'kim2.mp3' 
+  },
+  { 
+    id: 'song3', 
+    title: 'BNB 4 LYF', 
+    artist: 'Alon', 
+    imageFile: 'https://static.wixstatic.com/media/e2da02_06747edaa79c491cadf773c6481f826a~mv2.jpg', 
+    audioFile: 'kim3.mp3' 
+  },
+  { 
+    id: 'song4', 
+    title: 'gym flow', 
+    artist: 'Alon', 
+    imageFile: 'https://static.wixstatic.com/media/e2da02_f4e8abcf31d04d96a78f997107f092a3~mv2.jpg', 
+    audioFile: 'kim4.mp3' 
+  },
+  { 
+    id: 'song5', 
+    title: 'Communist mood', 
+    artist: 'Alon', 
+    imageFile: 'https://static.wixstatic.com/media/e2da02_924c0508ede944a094cc78a8d8074fe3~mv2.jpg', 
+    audioFile: 'kim5.mp3' 
+  },
+  { 
+    id: 'song6', 
+    title: 'Broccoli', 
+    artist: 'Alon', 
+    imageFile: 'https://static.wixstatic.com/media/e2da02_0eb6d688f7a149fa95c1949c76e011aa~mv2.jpg', 
+    audioFile: 'kim6.mp3' 
+  },
+  { 
+    id: 'song7', 
+    title: 'Fuck Alon', 
+    artist: 'Alon', 
+    imageFile: 'https://static.wixstatic.com/media/e2da02_a6e8c5f0ff2b4425a7f1b27c20ad5815~mv2.jpg', 
+    audioFile: 'kim7.mp3' 
+  },
+  { 
+    id: 'song8', 
+    title: 'Fud playlist', 
+    artist: 'BTS', 
+    imageFile: 'https://static.wixstatic.com/media/e2da02_707707cd37814c80b8612bf3f6f5c07f~mv2.jpg', 
+    audioFile: 'bts.mp3' 
+  }
+];
         
         // Default playlists
         const defaultPlaylists = [
