@@ -230,12 +230,20 @@
       position: relative;
     }
     
-    .song-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
+.song-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.song-card[data-song-id="song7"] .song-img {
+  object-position: 65% center;
+}
+
+.song-card[data-song-id="song8"] .song-img {
+  object-position: center 65%;
+}
     
     .song-card:hover .song-img {
       transform: scale(1.05);
