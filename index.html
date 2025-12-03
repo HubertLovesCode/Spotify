@@ -2566,36 +2566,36 @@ document.getElementById('contract-address').addEventListener('click', function()
           document.head.appendChild(styleElement);
         }
         
-        // Function to load songs to the home view
-        function loadSongs() {
-          const songsGrid = document.getElementById('songs-grid');
-          songsGrid.innerHTML = '';
-          
-          songs.forEach(song => {
-            const songCard = document.createElement('div');
-            songCard.className = 'song-card';
-            songCard.dataset.songId = song.id;
-            
-            if (song.id === 'song8') {
-              // BTS song should show the error dialog
-              songCard.onclick = showErrorDialog;
-            } else {
-              songCard.onclick = () => playSong(song.id);
-            }
-            
-            songCard.innerHTML = `
-              <div class="song-img-container">
-                <img src="images/${song.imageFile}" alt="${song.title}" class="song-img">
-              </div>
-              <div class="song-info-container">
-                <div class="song-title">${song.title}</div>
-                <div class="song-artist">${song.artist}</div>
-              </div>
-            `;
-            
-            songsGrid.appendChild(songCard);
-          });
-        }
+// Function to load songs to the home view
+function loadSongs() {
+  const songsGrid = document.getElementById('songs-grid');
+  songsGrid.innerHTML = '';
+  
+  songs.forEach(song => {
+    const songCard = document.createElement('div');
+    songCard.className = 'song-card';
+    songCard.dataset.songId = song.id;
+    
+    if (song.id === 'song8') {
+      // BTS song should show the error dialog
+      songCard.onclick = showErrorDialog;
+    } else {
+      songCard.onclick = () => playSong(song.id);
+    }
+    
+    songCard.innerHTML = `
+      <div class="song-img-container">
+        <img src="${song.imageFile}" alt="${song.title}" class="song-img">
+      </div>
+      <div class="song-info-container">
+        <div class="song-title">${song.title}</div>
+        <div class="song-artist">${song.artist}</div>
+      </div>
+    `;
+    
+    songsGrid.appendChild(songCard);
+  });
+}
         // Function to load playlists
         async function loadPlaylists() {
           const playlistsContainer = document.getElementById('playlists-container');
