@@ -2914,8 +2914,12 @@ li.innerHTML = `
           imgContainer.innerHTML = '';
           imgContainer.appendChild(currentSongImg);
           
-          // Set the audio source
-          audioPlayer.src = `audio/${song.audioFile}`;
+   // Set the audio source - handle both local files and full URLs
+if (song.audioFile.startsWith('http://') || song.audioFile.startsWith('https://')) {
+  audioPlayer.src = song.audioFile;
+} else {
+  audioPlayer.src = `audio/${song.audioFile}`;
+}
           
           // Play the song
           audioPlayer.load();
