@@ -2576,12 +2576,7 @@ function loadSongs() {
     songCard.className = 'song-card';
     songCard.dataset.songId = song.id;
     
-    if (song.id === 'song8') {
-      // BTS song should show the error dialog
-      songCard.onclick = showErrorDialog;
-    } else {
-      songCard.onclick = () => playSong(song.id);
-    }
+songCard.onclick = () => playSong(song.id);
     
     songCard.innerHTML = `
       <div class="song-img-container">
@@ -2731,7 +2726,7 @@ async function loadPlaylists() {
               </thead>
               <tbody>
                 ${results.map((song, index) => `
-                  <tr data-song-id="${song.id}" ${song.id === 'song8' ? 'onclick="showErrorDialog()"' : `onclick="playSong('${song.id}')"`}>
+                  <tr data-song-id="${song.id}" onclick="playSong('${song.id}')"
                     <td class="song-number">${index + 1}</td>
                     <td>
                       <div class="song-cell">
@@ -2821,7 +2816,7 @@ async function loadPlaylists() {
               </thead>
               <tbody>
                 ${playlistSongs.map((song, index) => `
-                  <tr data-song-id="${song.id}" ${song.id === 'song8' ? 'onclick="showErrorDialog()"' : `onclick="playSong('${song.id}')"`}>
+                  <tr data-song-id="${song.id}" onclick="playSong('${song.id}')"
                     <td class="song-number">${index + 1}</td>
                     <td>
                       <div class="song-cell">
