@@ -2375,7 +2375,7 @@
           // Initialize Supabase Client - Replace with your actual project values
           const supabaseUrl = 'https://nxonhlsbiwiejcjfkrvv.supabase.co';
           const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im54b25obHNiaXdpZWpjamZrcnZ2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI3ODEzOTQsImV4cCI6MjA1ODM1NzM5NH0.0qjK26i5EvACQJKTfnEMUTD89DzzOswCO1PeQz8omVA'; // Get this from your Supabase project settings
-          const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+const supabase = null;
           // Mock data for songs
 const songs = [
   { 
@@ -2596,70 +2596,24 @@ function loadSongs() {
     songsGrid.appendChild(songCard);
   });
 }
-        // Function to load playlists
-        async function loadPlaylists() {
-          const playlistsContainer = document.getElementById('playlists-container');
-          
-          // Show loading indicator
-          playlistsContainer.innerHTML = '<div class="loader"></div>';
-          
-          try {
-            // Get user-created playlists from Supabase
-            const { data: userPlaylists, error } = await supabase
-              .from('playlists')
-              .select('*')
-              .order('created_at', { ascending: false });
-            
-            if (error) throw error;
-            
-            // Combine with default playlists
-            const allPlaylists = [...defaultPlaylists];
-            
-            // Add user playlists if any were returned
-            if (userPlaylists && userPlaylists.length > 0) {
-              allPlaylists.push(...userPlaylists);
-            }
-            
-            playlistsContainer.innerHTML = '';
-            
-            allPlaylists.forEach(playlist => {
-              const li = document.createElement('li');
-              li.dataset.playlistId = playlist.id;
-              li.onclick = () => loadPlaylistView(playlist.id);
-              
-const imageUrl = playlist.is_user_created 
-  ? playlist.image_url 
-  : playlist.image;
-              
-li.innerHTML = `
-  <img src="${playlist.image}" alt="${playlist.name}" class="playlist-mini-img">
-  ${playlist.name}
-`;
-              
-              playlistsContainer.appendChild(li);
-            });
-          } catch (error) {
-            console.error('Error loading playlists:', error);
-            
-            // Fallback to just loading default playlists
-            setTimeout(() => {
-              playlistsContainer.innerHTML = '';
-              
-              defaultPlaylists.forEach(playlist => {
-                const li = document.createElement('li');
-                li.dataset.playlistId = playlist.id;
-                li.onclick = () => loadPlaylistView(playlist.id);
-                
-li.innerHTML = `
-  <img src="${playlist.image}" alt="${playlist.name}" class="playlist-mini-img">
-  ${playlist.name}
-`;
-                
-                playlistsContainer.appendChild(li);
-              });
-            }, 500);
-          }
-        }
+// Function to load playlists
+async function loadPlaylists() {
+  const playlistsContainer = document.getElementById('playlists-container');
+  playlistsContainer.innerHTML = '';
+  
+  defaultPlaylists.forEach(playlist => {
+    const li = document.createElement('li');
+    li.dataset.playlistId = playlist.id;
+    li.onclick = () => loadPlaylistView(playlist.id);
+    
+    li.innerHTML = `
+      <img src="${playlist.image}" alt="${playlist.name}" class="playlist-mini-img">
+      ${playlist.name}
+    `;
+    
+    playlistsContainer.appendChild(li);
+  });
+}
         
         // Function to setup navigation
         function setupNavigation() {
